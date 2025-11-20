@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Indonesia - Modern & Terpercaya</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Berita Indonesia</h1>
+            <nav>
+                <a href="#" onclick="loadCategory('')">Utama</a>
+                <a href="#" onclick="loadCategory('politics')">Politik</a>
+                <a href="#" onclick="loadCategory('sports')">Olahraga</a>
+                <a href="#" onclick="loadCategory('business')">Ekonomi</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Cari berita...">
+                <button onclick="searchNews()">Cari</button>
+                <div class="advanced-filters mt-3">
+                    <label for="date-filter">Tanggal:</label>
+                    <input type="date" id="date-filter">
+                    <label for="source-filter">Sumber:</label>
+                    <select id="source-filter">
+                        <option value="">Semua</option>
+                        <option value="detik">Detik</option>
+                        <option value="kompas">Kompas</option>
+                        <option value="tempo">Tempo</option>
+                    </select>
+                    <label for="author-filter">Penulis:</label>
+                    <input type="text" id="author-filter" placeholder="Nama penulis">
+                    <button onclick="applyAdvancedFilters()">Filter</button>
+                </div>
+            </div>
+            <button id="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+        </div>
+    </header>
+    <main class="container">
+        <div id="loading" class="loading">Memuat berita...</div>
+        <div id="news-container" class="news-grid"></div>
+        <div id="pagination" class="pagination"></div>
+        <div id="comments-section" class="comments mt-4">
+            <h4>Komentar</h4>
+            <input type="text" id="comment-input" placeholder="Tulis komentar...">
+            <button onclick="addComment()">Kirim</button>
+            <div id="comments-list"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Berita Indonesia. Sumber: NewsAPI, RSS Detik, Kompas, Tempo. Data real-time.</p>
+    </footer>
+    <script>
+        if ('Notification' in window) {
+            Notification.requestPermission().then(perm => {
+                if (perm === 'granted') {
+                    new Notification('Berita Indonesia', { body: 'Selamat datang! Anda akan mendapat notifikasi berita baru.' });
+                }
+            });
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

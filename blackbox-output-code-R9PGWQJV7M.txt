@@ -1,0 +1,8 @@
+news-indonesia-site/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── assets/
+    └── placeholder.jpg  (Download gambar placeholder dari https://via.placeholder.com/300x200?text=Berita dan simpan di sini)

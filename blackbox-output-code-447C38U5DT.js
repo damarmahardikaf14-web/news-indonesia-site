@@ -1,0 +1,1 @@
+<button onclick="shareArticle('${article.title}', '${article.url}')">Share</button>
